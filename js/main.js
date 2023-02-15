@@ -28,7 +28,7 @@ function tmdb_query( event ) {
 
 	// window.alert(event.currentTarget.getAttribute('data-tv'));
 	
-	let data_query = event.currentTarget.getAttribute('data-tv');
+	var data_query = event.currentTarget.getAttribute('data-tv');
 	
 	
 	
@@ -45,7 +45,7 @@ function tmdb_query( event ) {
 		popups_container.innerHTML = "";
 		
 		  
-		let movies_items = data.results;
+		var movies_items = data.results;
 		
 
 		movies_items.forEach(movie => {
@@ -72,9 +72,10 @@ function tmdb_query( event ) {
 				'<div class="textpopup">'+
 					'<h1>'+movie.name+'</h1>'+
 					'<span>'+movie.overview+'</span>'+
-					'<strong>'+movie.popularity+'</strong>'+
-					'<span onclick="clsPopup(this)">CLOSE</span>'+
-				'</div>'+
+					'<strong>'+"note "+"moyenne : " +movie.popularity+'</strong>'+
+					'<div onclick="clsPopup(this) class= "escbutton">'+
+					'<img src="img/fileclose.webp" alt="">'+
+					'</div>'
 			'</div>';
 			
 			
@@ -100,7 +101,7 @@ function tmdb_query( event ) {
 				
 				single_movie_item.onclick = function() {
 					
-					let popup_id = 'popuptableau_' + single_movie_item.getAttribute('data-movie-id');
+					var popup_id = 'popuptableau_' + single_movie_item.getAttribute('data-movie-id');
 					
 					document.getElementById(popup_id).classList.add('up');
 					document.getElementById(popup_id).style.display = 'flex';
@@ -124,11 +125,8 @@ function tmdb_query( event ) {
 	
 }
 
-
-
-
 function clsPopup(elem) {
-	let parent = elem.parentNode.parentNode
+	var parent = elem.parentNode.parentNode
 	parent.style.display = 'none';
 	parent.classList.remove("up");
 	return false;
