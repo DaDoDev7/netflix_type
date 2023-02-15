@@ -73,7 +73,7 @@ function tmdb_query( event ) {
 					'<h1>'+movie.name+'</h1>'+
 					'<span>'+movie.overview+'</span>'+
 					'<strong>'+"note "+"moyenne : " +movie.popularity+'</strong>'+
-					'<div onclick="clsPopup(this) class= "escbutton">'+
+					'<div onclick=clsPopup(this) class= "escbutton">'+
 					'<img src="img/fileclose.webp" alt="">'+
 					'</div>'
 			'</div>';
