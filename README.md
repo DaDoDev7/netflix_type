@@ -1,4 +1,4 @@
-# netlfix
+# netflix_type
 
 direct link :
 
